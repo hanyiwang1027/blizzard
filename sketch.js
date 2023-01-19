@@ -56,6 +56,10 @@ function draw() {
     translate(width/2, 0);
     pop();
 
+    if(mouseIsPressed) {
+
+    }
+
     for (let i = 0; i < ballCount; i++) {
         ellipse(x[i], y[i], size[i]);
 
@@ -114,3 +118,19 @@ function snowMan3() {
     pop();
 }
 
+function mousePressed() {
+    clear();
+    for(let i = 0; i < ballCount; i++) {
+        x[i] = width / 2;
+        y[i] = height;
+
+        size[i] = random(5, 30);
+
+        xSpeed[i] = random(-3, 3);
+        ySpeed[i] = random(-3, 3);
+
+        h[i] = random(230, 290);
+        s[i] = random(10, 40);
+        b[i] = random(80, 95);
+    }
+}
